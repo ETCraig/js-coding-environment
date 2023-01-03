@@ -5,7 +5,7 @@ export const unpkgPathPlugin = () => {
         name: 'unpkg-path-plugin',
         setup(build: esbuild.PluginBuild) {
             // Handle root entry
-            build.onResolve({ filter: /(^indEx\.js$)/ }, () => {
+            build.onResolve({ filter: /(^index\.js$)/ }, () => {
                 return { path: 'index.js', namespace: 'a' }
             });
             // Handle relative paths in a module
