@@ -8,11 +8,11 @@ import codeShift from "jscodeshift";
 import Highlighter from "monaco-jsx-highlighter";
 
 interface CodeEditorProps {
-  intitalValue: string;
+  initialValue: string;
   onChange(value: string): void;
 }
 
-const CodeEditor: React.FC<CodeEditorProps> = ({ intitalValue, onChange }) => {
+const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
   const editorRef = useRef<any>();
 
   const onEditorDidMount: EditorDidMount = (getValue, monacoEditor) => {
@@ -62,7 +62,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ intitalValue, onChange }) => {
         Format
       </button>
       <MonacoEditor
-        value={intitalValue}
+        value={initialValue}
         editorDidMount={onEditorDidMount}
         language="javascript"
         theme="dark"
