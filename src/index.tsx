@@ -3,11 +3,16 @@ import ReactDOM from "react-dom";
 import CodeCell from "./components/code-cell/code-cell";
 import TextEditor from "./components/text-editor/text-editor";
 
+import { Provider } from "react-redux";
+import { store } from "./state";
+
 const App = () => {
   return (
-    <div>
-      <TextEditor />
-    </div>
+    <Provider store={store}>
+      <div>
+        <TextEditor />
+      </div>
+    </Provider>
   );
 };
 
